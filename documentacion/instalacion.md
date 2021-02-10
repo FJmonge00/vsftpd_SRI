@@ -5,7 +5,7 @@
 ## Pre-Intalación
 
 *Aconsejo no usar una máquina en la ya exista un servicio web proftpd*
-*Si tenemos instalado apache2 aconsejo borrarlo por completo...*
+*Si tenemos instalado proftpd aconsejo borrarlo por completo...(o algún otro servicio)*
 
 ```bash
 systemctl stop proftpd.service 
@@ -26,7 +26,7 @@ apt update
 apt-get install vsftpd -y
 ```
 
-*Este paso lo considero casi obligario durante la instalación por seguridady para poder empezar a usar el servicio FTP*
+*Este paso lo considero casi obligario durante la instalación por seguridad y para poder empezar a usar el servicio FTP*
 
 ```bash
 cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
