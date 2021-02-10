@@ -9,11 +9,12 @@ Según sus desarrolladores, se trata de un servidor muy seguro, extremadamente r
 
 Características:
 
-- Application Acceleration (acelerador de aplicaciones) agiliza la entrega de contenidos.
-- Servidor proxy inverso para la aceleración web (HTTP, TCP, UPD) o como proxy de correo electrónico (IMAP, POP3, SMTP).
-- Cifrado TLS para una transferencia de datos segura.
-- Gestión de ancho de banda para un mejor rendimiento.
-- Balanceo de carga con reorientación de solicitudes para disminuir la carga del servidor.
-- Streaming de vídeo para reproducir archivos en formato MP4 y FLV.
+- Dispone de configuraciones de IP virtual.
+- Puede crear usuarios virtuales.
+- Opciones de configuración por parte del usuario son muy avanzadas.
+- Dispone de un acelerador de ancho de banda para que funcionen las cargas y descargas aún mejor.
+- Establecer límites por IP.
+- Es compatible con IPv6.
+- Soporte de cifrado.
 ________________________________________
 *[Volver al índice...](../README.md)*
