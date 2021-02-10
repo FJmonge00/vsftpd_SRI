@@ -5,6 +5,7 @@
 ## Pre-Intalación
 
 *Aconsejo no usar una máquina en la ya exista un servicio web proftpd*
+
 *Si tenemos instalado proftpd aconsejo borrarlo por completo...(o algún otro servicio)*
 
 ```bash
