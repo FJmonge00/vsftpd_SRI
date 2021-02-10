@@ -8,7 +8,7 @@ Este repositorio lo utilizaré para un proyecto en el que estudiaré el servicio
 ### [1.- Introducción. 🔎](documentacion/introduccion.md)
 ### [2.- Comparativa con proftpd. 🆚](documentacion/ComparativaConApache.md)
 ### [3.- Esquema de red. 🌐](documentacion/EsquemaDeRed.md)
-### [4.- Instalación. ⌨️🖱️](documentacion/CasosPracticos.md)
+### [4.- Instalación. ⌨️🖱️](documentacion/instalacion.md)
 ### [5.- Casos prácticos. ⌨️🖱️](documentacion/CasosPracticos.md)
 ### [6.- Referencias. 👀](documentacion/referencias.md)
 
