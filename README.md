@@ -1,6 +1,6 @@
 <img src="./imagenes/MI-LICENCIA88x31.png" style="float: left; margin-right: 10px;" />
 
-![logo vsftp](./imagenes/vsftpLogo.png)
+![logo vsftp](./imagenes/vsftpdLogo.png)
 ## Descripción
 Este repositorio lo utilizaré para un proyecto en el que estudiaré el servicio  vsftp, los distintos puntos en los que está estructurado están ordenados por la condiciones de la actividad. **Asignatura: SRI (*Servicios en Red*)**
 
