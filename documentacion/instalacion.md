@@ -6,7 +6,7 @@
 
 *Aconsejo no usar una máquina en la ya exista un servicio web proftpd*
 
-*Si tenemos instalado proftpd aconsejo borrarlo por completo...(o algún otro servicio)*
+*Si tenemos instalado proftpd aconsejo borrarlo por completo...(o algún otro servicio FTP)*
 
 ```bash
 systemctl stop proftpd.service 
@@ -18,7 +18,7 @@ rm -R -i /srv/proftpd/*
 apt purge proftpd -y
 apt autoremove
 ```
-*Aconsejo no usar máquina en la que ya tuvisemos un servicio web apache*
+*Aconsejo no usar máquina en la que ya tuvisemos un servicio web proftpd*
 
 ## Instalación
 
