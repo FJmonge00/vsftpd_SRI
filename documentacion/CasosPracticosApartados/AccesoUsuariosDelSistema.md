@@ -26,7 +26,7 @@ Usaremos la opción `allow_writeable_chroot = YES` para anular esta configuraci�
 
 *Añadimos o descomentamos la siguiente directiva:*
 
-```conf
+```yml
 chroot_local_user=YES
 allow_writeable_chroot=YES
 ```

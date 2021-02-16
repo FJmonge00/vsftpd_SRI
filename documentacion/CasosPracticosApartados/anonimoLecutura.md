@@ -51,7 +51,7 @@ El servidor vsftpd está configurado de manera predeterminada de forma que el us
 
 *Añadimos o descomentamos la siguiente directiva:*
 
-```conf
+```yml
 anonymous_enable=YES
 ```
 
