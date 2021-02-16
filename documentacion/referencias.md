@@ -2,8 +2,8 @@
 
 ## Referencias 👀
 
-- <https://www.internetlab.es>
-- <https://clouding.io>
+- ### [alexariza.net](https://alexariza.net/tutorial/comandos-basicos-para-la-configuracion-de-vsftpd-en-ubuntu/)
+- ### [es.linux-console.net](https://es.linux-console.net/?p=757)
 - <https://www.ionos.es>
 - <https://www.redeszone.net>
 

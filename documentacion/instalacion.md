@@ -27,25 +27,14 @@ apt autoremove
 apt update
 apt-get install vsftpd -y
 ```
-
-*Este paso lo considero casi obligario durante la instalación por seguridad y al empezar a usar el servicio FTP con vsftpd*
-
-```bash
-cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
-echo "chroot_list_enable=YES" >> /etc/vsftpd.conf
-echo "chroot_list_file=/etc/vsftpd.chroot_list" >> /etc/vsftpd.conf
-echo "write_enable=YES" >> /etc/vsftpd.conf
-echo "allow_writeable_chroot=YES" >> /etc/vsftpd.conf
-```
-
-*Descomentamos o añadimos las siguientes estas lineas*
+<!-- *Descomentamos o añadimos las siguientes estas lineas*
 
 ```conf
 chroot_list_enable=YES
 chroot_list_file=/etc/vsftpd.chroot_list
 write_enable=YES
 allow_writeable_chroot=YES
-```
+``` -->
 
 Activamos el servicio y comprobamos su estado
 
@@ -53,6 +42,14 @@ Activamos el servicio y comprobamos su estado
 systemctl enable vsftpd.service
 systemctl restart vsftpd.service
 systemctl status vsftpd.service
+```
+
+*En Centos...*
+
+```bash
+firewall-cmd --zone=public --permanent --add-port=21/tcp
+firewall-cmd --zone=public --permanent --add-service=ftp
+firewall-cmd --reload
 ```
 
 ![servicio vsftp](../imagenes/estadoServicioInstalacion.jpg)

@@ -2,7 +2,7 @@
 
 # Casos Prácticos ⌨️🖱️
 
-## Versión de Nginx instalado.
+## Versión de vsftpd instalado.
 
 ```bash
 vsftpd -v
@@ -40,12 +40,30 @@ ls -l /etc/vsftpd.conf
 
 ### Explicación de las directivas más importantes.
 
-LOREM IPSUM LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMVLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM
 
-## Configuraciones Avanzadas
+|Directivas  | Descripción  |
+|:---------:|---------|
+|anonymous_enable=NO|Deshabilitar el inicio de sesión anónimo|
+|local_enable=YES|Permite inicios de sesión locales|		 
+|write_enable=YES|Habilita los comandos FTP que cambian el sistema de archivos|		 
+|local_umask=022|Valor de umask para la creación de archivos para usuarios locales|		     
+|dirmessage_enable=YES| Habilita la visualización de mensajes cuando los usuarios ingresan por primera vez a un nuevo directorio |	 
+|xferlog_enable=YES|Se mantendrá un archivo de registro que detalla las cargas y descargas|		 
+|connect_from_port_20=YES|Usar el puerto 20 (ftp-data) en la máquina del servidor para conexiones de estilo PORT| 
+|xferlog_std_format=YES|Mantener el formato de archivo de registro estándar|   
+|listen=NO|Evitar que vsftpd se ejecute en modo independiente|   			 
+|listen_ipv6=YES|Vsftpd escuchará en un socket IPv6 en lugar de IPv4|		     
+|pam_service_name=vsftpd|Nombre del servicio PAM que vsftpd usará|
+|userlist_enable=YES|Habilita vsftpd para cargar una lista de nombres de usuario|
+|tcp_wrappers=YES|Activa los contenedores tcp |
 
-## [Acceso al servidor FTP: usuarios del sistema.](CasosPracticosApartados/AccesoUsuariosDelSistema.md)
-## [Acceso al servidor FTP: anónimo Lectura](CasosPracticosApartados/anonimoLecutura.md)
-## [Acceso al servidor FTP: anónimo Escritura/Lectura](CasosPracticosApartados/anonimoEscrituraLectura.md)
+## Configuraciones Avanzadas ⚙️
+
+## [E) Acceso al servidor FTP: usuarios del sistema 🖥️⚙️.](CasosPracticosApartados/AccesoUsuariosDelSistema.md)
+## [F) Acceso al servidor FTP: anónimo Lectura 📃](CasosPracticosApartados/anonimoLecutura.md)
+## [G) Acceso al servidor FTP: anónimo Escritura/Lectura 📃 📝](CasosPracticosApartados/anonimoEscrituraLectura.md)
+## [H) Acceso al servidor FTP: Creación de usuarios virtuales.👥](CasosPracticosApartados/LOREMIPSUM.md)
+## [I) Acceso seguro al servidor FTP.🔐](CasosPracticosApartados/LOREMIPSUM.md)
+
 ________________________________________
 *[Volver al índice...](../README.md)*
