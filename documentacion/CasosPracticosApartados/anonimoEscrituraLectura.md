@@ -21,7 +21,7 @@
 ftp 127.0.0.1
 ```
 
-![usuarios](../../imagenes/noAnonymous.jpg)
+![usuarios](../../imagenes/errorSubida.jpg)
 
 ## Configurar acceso a usuario Anonymous
 
