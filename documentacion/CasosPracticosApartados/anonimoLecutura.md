@@ -1,230 +1,104 @@
 <img src="../../imagenes/MI-LICENCIA88x31.png" style="float: left; margin-right: 10px;" />
 
-# Autentificación, Autorización y Control de acceso
+# F) Acceso al servidor FTP: anónimo Lectura 📃
 
-## Ejercicio F
+Anónimo solo tendrá permiso de lectura en su directorio de trabajo.
 
-- www.web1.org se puede acceder desde la red externa y la red interna.
-- www.web2.org sólo se puede acceder desde la red interna.
+## Probar con la configuración por defecto
 
-### Configuración del Virtual Host
-
-*Web1 no configuramos nada respecto al punto anterior* [Clic para ver web1](https://github.com/FJmonge00/nginx_SRI/blob/master/imagenes/web1.png)
-
-![ficheroconfiguracion](../../imagenes/web2Restricciones.png)
-
-**Quitando los comentarios y lineas en blanco así quedaría nuestro sitio virtual:**
-
-```nginx
-server {
-        listen 80;
-        listen [::]:80;
-        root /var/www/web1;
-        index index.html index.htm index.nginx-debian.html;
-        server_name www.web1.org;
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-                allow 192.168.3.0/24;
-                deny all;
-        }
-}
-```
-
-[Clic para descargar configuración](../../ficherosConfiguracion/web2.org.EjercicioF.conf)
-
-### Recargarmos el servicio de Nginx
 
 ```bash
-systemctl reload nginx
+ftp 127.0.0.1
 ```
 
-### Comprobación
+![usuarios](../../imagenes/noAnonymous.jpg
 
-#### Cliente-red interna
+*Configuración actual por defecto:*
 
-Acceso www.web1.org:
+```conf
+listen=YES
+#
+listen_ipv6=NO
+anonymous_enable=NO
+#
+local_enable=YES
+#
+dirmessage_enable=YES
+#
+use_localtime=YES
+#
+# Activate logging of uploads/downloads.
+xferlog_enable=YES
+#
+# Make sure PORT transfer connections originate from port 20 (ftp-data).
+connect_from_port_20=YES
+#
+secure_chroot_dir=/var/run/vsftpd/empty
+#
+pam_service_name=vsftpd
+#
+rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+ssl_enable=NO
+#
+```
 
-![ficheroconfiguracion](../../imagenes/web1RectricionesInterna.jpg)
+## Configurar acceso a usuario Anonymous
 
-Acceso www.web2.org:
+El servidor vsftpd está configurado de manera predeterminada de forma que el usuario solo puede iniciar sesión en el servidor FTP con una cuenta específica(usuarios del sistema). 
 
-![ficheroconfiguracion](../../imagenes/web2RectricionesInterna.jpg)
+![usuarios](../../imagenes/estadoServicioAnonymous.jpg)
 
-#### Cliente-red externa
+*Añadimos o descomentamos la siguiente directiva:*
 
-Acceso www.web1.org:
-
-![ficheroconfiguracion](../../imagenes/web1Restricciones.jpg)
-
-Acceso www.web2.org:
-
-![ficheroconfiguracion](../../imagenes/accesoWeb2EjercicioF.jpg)
-
-## Ejercicio G
-
-- www.web1.org contiene un directorio llamado privado.
-- Configura una autentificación básica. Sólo puede acceder usuarios válidos.
-
-### Paso previo...
-
-Comprobamos que ``apache2-utils`` se encuentra instalado para poder usar ``htpasswd`` .
-
-*Para RHEL y Centos 8 : ``httpd-tools``*
+```conf
+anonymous_enable=YES
+```
 
 ```bash
-apt policy apache2-utils
+echo "anonymous_enable=YES" >> /etc/vsftpd.conf
 ```
-*Si no esta instalado...*
+
+## Añadimos algunos datos
+
 
 ```bash
-apt install apache2-utils
+cd /srv/ftp
+touch Prueba01.txt
+touch Prueba01.bat
+touch Prueba01.exe
+touch Prueba01.sh
+touch Prueba01.ps1
+wget https://www.google.es/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png
 ```
 
-### Creamos el directorio privado
+**Damos los permisos y propitarios a los ficheros de la misma manera que vienen por defecto root:ftp...**
+
+/srv/ftp
 
 ```bash
-mkdir /var/www/web1/privado
-chown -R www-data:www-data /var/www/web1/ 
+chown -R :ftp /srv/ftp/
+ls -l --color /srv/ftp/
 ```
 
-![ficheroconfiguracion](../../imagenes/directorioPrivado.jpg)
+![usuarios](../../imagenes/ficheros.jpg)
 
-### Crear archivo de usuario de autenticación HTTP
-
-Comenzamos creando un archivo que almacene pares de usuario y contraseña. Usaremos la utilidad de apache ``htpasswd`` para crear este archivo.
-
-### Creamos usuarios
+*Reiniciamos el servicio*
 
 ```bash
-htpasswd -c /etc/nginx/conf.d/.htpasswd usuario01
+systemctl restart vsftpd
+systemctl status vsftpd
 ```
 
-*Para crear un segundo usuario NO usar la opción -c.*(Unicamente usar la primera vez para crear el fichero)**
+## Acceso con Anonymous
 
 ```bash
-htpasswd /etc/nginx/conf.d/.htpasswd usuario02
+ftp 127.0.0.1
 ```
 
-### Comprobamos los usuarios creados
+![usuarios](../../imagenes/PruebaLecturaAnonymous.jpg)
 
-```bash
-cat /etc/nginx/conf.d/.htpasswd
-```
-
-![anadirUsuarios](../../imagenes/anadirUsuarios.jpg)
-
-### Configuración del Virtual Host de www.web1.org
-
-![ficheroconfiguracion](../../imagenes/configuracionEjercicioG.png)
-
-**Quitando los comentarios y lineas en blanco así quedaría nuestro sitio virtual:**
-
-```nginx
-server {
-        listen 80;
-        listen [::]:80;
-        root /var/www/web1;
-        index index.html index.htm index.nginx-debian.html;
-        server_name www.web1.org;
-        location / {
-                try_files $uri $uri/ =404;
-                }
-location /privado {
-		auth_basic           	"Restricted Access!";
-    		auth_basic_user_file 	/etc/nginx/conf.d/.htpasswd; 
-	}
-}
-```
-[Clic para descargar configuración](../../ficherosConfiguracion/web1.org.EjercicioG.conf)
-
-### Recargarmos el servicio de Nginx
-
-```bash
-systemctl reload nginx.service
-systemctl status nginx.service
-```
-![ficheroconfiguracion](../../imagenes/servicioEjerG.png)
-
-### Comprobación
-
-#### Cliente-red externa
-
-Acceso www.web1.org/privado:
-
-![ficheroconfiguracion](../../imagenes/pruebaEjercicio.gif)
-
-<!-- ![ficheroconfiguracion](../../imagenes/accedoWeb1EjercicioG.png)
-
-![ficheroconfiguracion](../../imagenes/accedoWeb1EjercicioG2.png) -->
-
-#### Posibles errores
-
->**Importante** En Nginx por defecto esta desactivada la opción de indexar directorios, si no añadimos ningún fichero index en /privado nos dará error `403 forbidden` no confundir con la alerta de usuario no autorizado. 
-
-![ficheroconfiguracion](../../imagenes/posibleError.jpg)
-
-## Ejercicio H
-
-- www.web1.org contiene un directorio llamado privado.
-- Desde la red externa pide autorización y desde la red interna NO.
-
-> **IMPORTANTE**
-> Para poder realizar esta actividad haremos uso de la directiva ``satisfy``, esta por defecto se encuentra con valor ``All``, esto significa que se deben cumplir todas las condiciones que se definen en la configuración del sitio virtual, (Semejante a definir las reglas con un `AND`). Para poder hacer lo que nos pide este ejercicio cambiaremos el valor de esta directiva por ``any``, es decir, que se cumpla al menos una de las condiciones, (semejante a enumerar las reglas con un `OR`).
-
->Esta directiva es importante que la cambiemos __**unicamente en la localización de /privado**__ dentro de este sitio virtual. Los clientes que accedan a los recursos que estén ``www.web1.org`` y en concreto ``/privado`` tendrán que cumplir al menos una de las reglas definidas. En este casó serán: Que pertenezca a la red 192.168.3.0/24 ó que se identifiquen con usuario y contraseña.(Si aplica estas normas al sitio virtual por completo pueda dar pié a grandes fallos de seguridad.)
-
->Dejo la URL para más información sobre la directiva ``satisfy`` por parte de [Nginx.org](http://nginx.org/en/docs/http/ngx_http_core_module.html#satisfy) .
-
-![ficheroconfiguracion](../../imagenes/EjercicioHConfiguracion.png)
-
-**Quitando los comentarios y lineas en blanco así quedaría nuestro sitio virtual:**
-
-```nginx
-server {
-        listen 80;
-        listen [::]:80;
-        root /var/www/web1;
-        index index.html index.htm index.nginx-debian.html;
-        server_name www.web1.org;
-        location / {
-                try_files $uri $uri/ =404;
-                }
-location /privado {
-                satisfy any; #Al poner esta directiva en any accederá si se cumple alguna de las reglas establecidas
-                allow 192.168.3.0/24;
-                deny all;
-                auth_basic              "Restricted Access!";
-                auth_basic_user_file    /etc/nginx/conf.d/.htpasswd;
-        }
-}
-```
-[Clic para descargar configuración](../../ficherosConfiguracion/web1.org.EjercicioH.conf)
-
-### Recargarmos el servicio de Nginx
-
-```bash
-systemctl reload nginx.service
-systemctl status nginx.service
-```
-![ficheroconfiguracion](../../imagenes/servicioEjerG.png)
-
-### Comprobación
-
-#### Cliente-red externa
-
-Acceso www.web1.org/privado:
-
-![PruebaRedExterna](../../imagenes/pruebaEjercicioHRedExterna.gif)
-
-
-#### Cliente-red Interna
-
-Acceso www.web1.org/privado:
-
-![PruebaRedInterna](../../imagenes/pruebaEjercicioH.gif)
 ________________________________________
 *[Volver atrás...](../CasosPracticos.md)*
 
-*[Ir a Siguiente punto...](./seguridad.md)*
+*[Ir a Siguiente punto...](./anonimoEscrituraLectura.md)*
