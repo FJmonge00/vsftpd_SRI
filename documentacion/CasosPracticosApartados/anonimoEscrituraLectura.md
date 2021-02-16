@@ -67,7 +67,7 @@ systemctl status vsftpd
 
 ![usuarios](../../imagenes/Ficheros.jpg)
 
-## Acceso con Anonymous
+## Probar Escritura con Anonymous
 
 ```bash
 ftp 127.0.0.1
