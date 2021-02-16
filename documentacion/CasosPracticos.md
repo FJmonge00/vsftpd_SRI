@@ -10,6 +10,10 @@ vsftpd -v
 
 ![version vsftpd](../imagenes/vsftpdVersion.jpg)
 
+## Usuarios creados en la instalación.ç
+
+![version vsftpd](../imagenes/usuariosYGrupos.jpg)
+
 ## Servicio asociado.
 
 ```bash
@@ -25,14 +29,18 @@ systemctl status vsftpd.service
 
 ## Ficheros de configuración.
 
+Principalmente casi toda la configuración de vsftpd está en: `/etc/vsftpd.conf`
+
 ```bash
-ls -la --color /etc/nginx/
-ls -la --color /usr/share/nginx/
-ls -la --color /var/www/
+find / -iname *vsftpd*
+ls -l /etc/vsftpd.conf
 ```
+
+![servicio vsftp](../imagenes/busquedaDeFicheros.jpg)
+
 ### Explicación de las directivas más importantes.
 
-![ficheros nginx](../imagenes/ficherosConfNginx.png)
+LOREM IPSUM LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMVLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM
 
 ## Configuraciones Acceso Servidor FTP.
 
@@ -43,7 +51,7 @@ ls -la --color /var/www/
 
 ## Configuraciones Avanzadas
 
-## [Acceso al servidor FTP: usuarios del sistema.](CasosPracticosApartados/AccesoUsuariosDelSistema.md.md)
+## [Acceso al servidor FTP: usuarios del sistema.](CasosPracticosApartados/AccesoUsuariosDelSistema.md)
 ## [Acceso al servidor FTP: anónimo Lectura](CasosPracticosApartados/anonimoLecutura.md)
 ## [Acceso al servidor FTP: anónimo Escritura/Lectura](CasosPracticosApartados/anonimoEscrituraLectura.md)
 ________________________________________

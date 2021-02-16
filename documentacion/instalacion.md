@@ -15,9 +15,10 @@ systemctl disable proftpd.service
 # PREFIERAS HACER UNA COPIA DE SEGURIDAD, VAMOS A ELIMINAR TODO
 rm -R -i /etc/proftpd/*
 rm -R -i /srv/proftpd/*
-apt purge proftpd -y
+apt purge proftpd-basic -y
 apt autoremove
 ```
+
 *Aconsejo no usar máquina en la que ya tuvisemos un servicio web proftpd*
 
 ## Instalación
@@ -27,7 +28,7 @@ apt update
 apt-get install vsftpd -y
 ```
 
-*Este paso lo considero casi obligario durante la instalación por seguridad y para poder empezar a usar el servicio FTP*
+*Este paso lo considero casi obligario durante la instalación por seguridad y al empezar a usar el servicio FTP con vsftpd*
 
 ```bash
 cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
