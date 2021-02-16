@@ -20,7 +20,9 @@ cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
 
 ## Enjaular usuarios
 
-De manera predeterminada, vsftpd no permite la escritura en el directorio chroot jail, por razones de seguridad. Usaremos la opción `allow_writeable_chroot = YES` para anular esta configuración. y `chroot_local_user=YES` para enjaularlos en su directorio de inicio predeterminado. 
+De manera predeterminada, vsftpd no permite la escritura en el directorio chroot jail, por razones de seguridad. 
+
+Usaremos la opción `allow_writeable_chroot = YES` para anular esta configuración. y `chroot_local_user=YES` para enjaularlos en su directorio de inicio predeterminado. 
 
 *Añadimos o descomentamos la siguiente directiva:*
 
