@@ -10,7 +10,7 @@ vsftpd -v
 
 ![version vsftpd](../imagenes/vsftpdVersion.jpg)
 
-## Usuarios creados en la instalación.ç
+## Usuarios creados en la instalación.
 
 ![version vsftpd](../imagenes/usuariosYGrupos.jpg)
 
@@ -41,13 +41,6 @@ ls -l /etc/vsftpd.conf
 ### Explicación de las directivas más importantes.
 
 LOREM IPSUM LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMVLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM
-
-## Configuraciones Acceso Servidor FTP.
-
-<!-- - vsftpd:
-    - Recargamos el servicio(no habrá cortes en el servicio): ``systemctl reload vsftpd``
-*ó*
-    - Reiniciamos el servicio (el servicio no estará disponible mientras se reinicia): ``systemctl restart vsftpd`` -->
 
 ## Configuraciones Avanzadas
 
