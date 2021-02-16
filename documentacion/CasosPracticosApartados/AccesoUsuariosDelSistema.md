@@ -11,7 +11,7 @@ adduser fran
 ls -l /home/fran
 ```
 
-![usuarios](../../imagenes/usuarioCreado.jpg
+![usuarios](../../imagenes/usuarioCreado.jpg)
 
 
 ```bash
