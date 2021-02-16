@@ -11,7 +11,7 @@ Anónimo solo tendrá permiso de lectura en su directorio de trabajo.
 ftp 127.0.0.1
 ```
 
-![usuarios](../../imagenes/noAnonymous.jpg
+![usuarios](../../imagenes/noAnonymous.jpg)
 
 *Configuración actual por defecto:*
 
