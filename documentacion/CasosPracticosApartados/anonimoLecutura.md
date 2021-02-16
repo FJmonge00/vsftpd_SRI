@@ -6,7 +6,6 @@ Anónimo solo tendrá permiso de lectura en su directorio de trabajo.
 
 ## Probar con la configuración por defecto
 
-
 ```bash
 ftp 127.0.0.1
 ```

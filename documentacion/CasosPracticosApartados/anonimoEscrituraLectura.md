@@ -25,11 +25,9 @@ ftp 127.0.0.1
 
 ## Configurar acceso a usuario Anonymous
 
-El servidor vsftpd está configurado de manera predeterminada de forma que el usuario solo puede iniciar sesión en el servidor FTP con una cuenta específica(usuarios del sistema). 
+El servidor vsftpd está configurado de manera predeterminada de forma que el usuario anonymous tenga permisos unicamente de lectura.
 
-![usuarios](../../imagenes/estadoServicioAnonymous.jpg)
-
-*Añadimos o descomentamos la siguiente directiva:*
+*Añadimos las siguientes directivas:*
 
 ```yml
 write_enable=YES
@@ -38,7 +36,7 @@ anon_mkdir_write_enable=YES
 anon_other_write_enable=YES
 ```
 
-las directivas de anon_upload, anon_mkdir_write,etc depende de `write_enable=YES` (Más detalle en la tabla de directivas al principio de este documento)
+> Las directivas de anon_upload, anon_mkdir_write,etc depende de `write_enable=YES` (Más detalle en la tabla de directivas al principio de este documento)
 
 ```bash
 mkdir /srv/ftp/sugerencias
