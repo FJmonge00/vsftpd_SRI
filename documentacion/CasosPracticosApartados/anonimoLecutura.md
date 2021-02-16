@@ -72,9 +72,9 @@ touch Prueba01.ps1
 wget https://www.google.es/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png
 ```
 
-**Damos los permisos y propitarios a los ficheros de la misma manera que vienen por defecto root:ftp...**
+**Damos los permisos y propitarios a los ficheros de la misma manera que vienen por defecto (root:ftp)**
 
-/srv/ftp
+`/srv/ftp`
 
 ```bash
 chown -R :ftp /srv/ftp/
