@@ -15,7 +15,7 @@ ftp 127.0.0.1
 
 *Configuración actual por defecto:*
 
-```nodejs
+```json
 listen=YES
 #
 listen_ipv6=NO
