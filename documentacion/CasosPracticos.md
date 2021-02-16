@@ -59,6 +59,10 @@ ls -l /etc/vsftpd.conf
 
 ## Configuraciones Avanzadas ⚙️
 
+### Fichero de condiguración ⚠️
+
+Para las prácticas eliminaré todos los comentarios y explicaciones que nos brinda el fichero e iré redirecionando las configuraciones en el fichero principalmente, confiaré en la lectura secuencial del fichero vsftpd.conf dejando algunas configuraciónes por defecto duplicadas con las mias.
+
 ## [E) Acceso al servidor FTP: usuarios del sistema 🖥️.](CasosPracticosApartados/AccesoUsuariosDelSistema.md)
 ## [F) Acceso al servidor FTP: anónimo Lectura 📃](CasosPracticosApartados/anonimoLecutura.md)
 ## [G) Acceso al servidor FTP: anónimo Escritura/Lectura 📃 📝](CasosPracticosApartados/anonimoEscrituraLectura.md)

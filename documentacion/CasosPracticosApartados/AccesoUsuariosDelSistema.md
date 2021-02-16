@@ -13,9 +13,6 @@ ls -l /home/fran
 
 ![usuarios](../../imagenes/usuarioCreado.jpg
 
-## Fichero de condiguración
-
-Para las prácticas eliminaré todos los comentarios y explicaciones que nos brinda el fichero e iré redirecionando las configuraciones en el fichero principalmente
 
 ```bash
 cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
@@ -25,6 +22,12 @@ cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
 
 De manera predeterminada, vsftpd no permite la escritura en el directorio chroot jail, por razones de seguridad. Usaremos la opción `allow_writeable_chroot = YES` para anular esta configuración. y `chroot_local_user=YES` para enjaularlos en su directorio de inicio predeterminado. 
 
+*Añadimos o descomentamos la siguiente directiva:*
+
+```conf
+chroot_local_user=YES
+allow_writeable_chroot=YES
+```
 
 ```bash
 echo "chroot_local_user=YES" >> /etc/vsftpd.conf

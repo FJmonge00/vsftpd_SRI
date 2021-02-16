@@ -2,23 +2,61 @@
 
 # F) Acceso al servidor FTP: anónimo Lectura 📃
 
-<!-- ## Crear Usuario
+Anónimo solo tendrá permiso de lectura en su directorio de trabajo.
 
-Vamos a crear un usuario en el sistema para esta práctica
+## Probar con la configuración por defecto
+
 
 ```bash
-adduser fran
-ls -l /home/fran
+ftp 127.0.0.1
 ```
 
-![usuarios](../../imagenes/usuarioCreado.jpg
+![usuarios](../../imagenes/noAnonymous.jpg
 
-## Fichero de condiguración
+*Configuración actual por defecto:*
 
-Para las prácticas eliminaré todos los comentarios y explicaciones que nos brinda el fichero e iré redirecionando las configuraciones en el fichero principalmente
+```conf
+listen=YES
+#
+listen_ipv6=NO
+anonymous_enable=NO
+#
+local_enable=YES
+#
+dirmessage_enable=YES
+#
+use_localtime=YES
+#
+# Activate logging of uploads/downloads.
+xferlog_enable=YES
+#
+# Make sure PORT transfer connections originate from port 20 (ftp-data).
+connect_from_port_20=YES
+#
+secure_chroot_dir=/var/run/vsftpd/empty
+#
+pam_service_name=vsftpd
+#
+rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+ssl_enable=NO
+#
+```
+
+## Configurar acceso a usuario Anonymous
+
+El servidor vsftpd está configurado de manera predeterminada de forma que el usuario solo puede iniciar sesión en el servidor FTP con una cuenta específica(usuarios del sistema). 
+
+![usuarios](../../imagenes/estadoServicioAnonymous.jpg)
+
+*Añadimos o descomentamos la siguiente directiva:*
+
+```conf
+anonymous_enable=YES
+```
 
 ```bash
-cp /etc/vsftpd.conf /etc/vsftpd.conf.ORIGINAL
+echo "anonymous_enable=YES" >> /etc/vsftpd.conf
 ```
 
 ## Enjaular usuarios
@@ -40,7 +78,7 @@ systemctl status vsftpd
 
 ![usuarios](../../imagenes/estadoServicio.jpg)
 
-![usuarios](../../imagenes/accesoEnjaulado.jpg) -->
+![usuarios](../../imagenes/accesoEnjaulado.jpg)
 
 ________________________________________
 *[Volver atrás...](../CasosPracticos.md)*
