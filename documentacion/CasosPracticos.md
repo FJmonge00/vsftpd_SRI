@@ -67,7 +67,7 @@ Para las prácticas eliminaré todos los comentarios y explicaciones que nos bri
 ## [F) Acceso al servidor FTP: anónimo Lectura 📃](CasosPracticosApartados/anonimoLecutura.md)
 ## [G) Acceso al servidor FTP: anónimo Escritura/Lectura 📃 📝](CasosPracticosApartados/anonimoEscrituraLectura.md)
 ## [H) Acceso al servidor FTP: Creación de usuarios virtuales.👥](CasosPracticosApartados/usuariosVirtuales.md)
-## [I) Acceso seguro al servidor FTP.🔐](CasosPracticosApartados/LOREMIPSUM.md)
+## [I) Acceso seguro al servidor FTP.🔐](CasosPracticosApartados/cifrado.md)
 
 ________________________________________
 *[Volver al índice...](../README.md)*
