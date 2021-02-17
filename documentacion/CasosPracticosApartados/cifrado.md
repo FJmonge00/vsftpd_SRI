@@ -73,5 +73,3 @@ systemctl status vsftpd
 
 ________________________________________
 *[Volver atrás...](../CasosPracticos.md)*
-
-*[Ir a Siguiente punto...](./anonimoLecutura.md)*
