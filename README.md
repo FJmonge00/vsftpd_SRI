@@ -17,4 +17,4 @@ Este repositorio lo utilizaré para un proyecto en el que estudiaré el servicio
 
 *Invito a probar ambos y compararlos*
 ________________________________________
-*[¿Te interesa saber de Nginx?...(Otro repositorio)](https://github.com/FJmonge00/nginx_SRI)*
+*[¿Te interesa saber de Proftpd?...(Otro repositorio)](https://github.com/FJmonge00/HerramientasFTP_SRI)*
