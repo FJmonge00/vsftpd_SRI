@@ -13,8 +13,8 @@ Este repositorio lo utilizaré para un proyecto en el que estudiaré el servicio
 ### [6.- Referencias. 👀](documentacion/referencias.md)
 
 ## Conclusión
-> lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumvv
+> Esta conclusión puede ser algo subjetiva, ya que se basa en mi experiencia con el uso del proftpd y vsftpd, proftpd me parece bastante más sencillo de configurar, reglas más concretas y automatizadas, mejores directivas para el uso de sitio virtuales.La implementación de permisos y directivas sobre carpetas me parece más eficaz en proftpd. En definitiva usaría proftpd si tuviese que elegir entre uno de ellos.
 
-*La decisión está en tus manos...*
+*Invito a probar ambos y compararlos*
 ________________________________________
 *[¿Te interesa saber de Nginx?...(Otro repositorio)](https://github.com/FJmonge00/nginx_SRI)*
