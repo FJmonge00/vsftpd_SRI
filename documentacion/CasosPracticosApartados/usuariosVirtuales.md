@@ -1,4 +1,6 @@
-# Usuarios Virtuales
+<img src="../../imagenes/MI-LICENCIA88x31.png" style="float: left; margin-right: 10px;" />
+
+# H) Acceso al servidor FTP: Creación de usuarios virtuales.👥
 
 El propósito, a partir de ahora, es crear usuarios cuyo único propósito es el acceso al FTP, por lo que no serán válidos para el resto de los servicios.
 
@@ -40,7 +42,7 @@ Actualizamos con:
 pam-auth-update
 ```
 
-Marcar la entrada que creamos anteriormente (Fijarse en el nombre de la ultima línea marcada y configuración creada anteriormente)
+Marcar la entrada que creamos anteriormente (Fijarse en el nombre de la ultima línea marcada es la configuración creada anteriormente)
 
 ![usuarios](../../imagenes/updatePAM.png)
 
@@ -60,3 +62,8 @@ useradd -m --groups ftponly --shell /sbin/nologin usuftp04
 **Grupo:**
 
 ![usuarios](../../imagenes/grupos.png)
+
+________________________________________
+*[Volver atrás...](../CasosPracticos.md)*
+
+*[Ir a Siguiente punto...](./cifrado.md)*
